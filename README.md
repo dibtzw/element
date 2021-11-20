@@ -36,10 +36,10 @@ For more information, please refer to [Quick Start](http://element.eleme.io/#/en
 
 ## 修改内容
 
-1.date-picker：日期组件修改：年份选择面板区域10年=》12年
-<img alt="year-table-update" src="https://github.com/dibtzw/readme-image/blob/main/element/year-table.png" width="200">
-2.date-picker：日期组件修改：月份选择面板设置为数字月份
-<img alt="month-table-update" src="https://github.com/dibtzw/readme-image/blob/main/element/month-table.png" width="200">
+1.date-picker：日期组件修改：年份选择面板区域10年=》12年<br>
+<img alt="year-table-update" src="https://github.com/dibtzw/readme-image/blob/main/element/year-table.png" width="200"><br>
+2.date-picker：日期组件修改：月份选择面板设置为数字月份<br>
+<img alt="month-table-update" src="https://github.com/dibtzw/readme-image/blob/main/element/month-table.png" width="200"><br>
 
 ## Browser Support
 Modern browsers and Internet Explorer 10+.
