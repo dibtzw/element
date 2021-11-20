@@ -285,7 +285,7 @@
 
       prevYear() {
         if (this.currentView === 'year') {
-          this.date = prevYear(this.date, 10);
+          this.date = prevYear(this.date, 12);
         } else {
           this.date = prevYear(this.date);
         }
@@ -293,7 +293,7 @@
 
       nextYear() {
         if (this.currentView === 'year') {
-          this.date = nextYear(this.date, 10);
+          this.date = nextYear(this.date, 12);
         } else {
           this.date = nextYear(this.date);
         }
@@ -568,11 +568,11 @@
       yearLabel() {
         const yearTranslation = this.t('el.datepicker.year');
         if (this.currentView === 'year') {
-          const startYear = Math.floor(this.year / 10) * 10;
+          const startYear = Math.floor(this.year / 12) * 12;
           if (yearTranslation) {
-            return startYear + ' ' + yearTranslation + ' - ' + (startYear + 9) + ' ' + yearTranslation;
+            return startYear + ' ' + yearTranslation + ' - ' + (startYear + 11) + ' ' + yearTranslation;
           }
-          return startYear + ' - ' + (startYear + 9);
+          return startYear + ' - ' + (startYear + 11);
         }
         return this.year + ' ' + yearTranslation;
       },

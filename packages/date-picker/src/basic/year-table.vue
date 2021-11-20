@@ -36,8 +36,12 @@
       <td class="available" :class="getCellStyle(startYear + 9)">
         <a class="cell">{{ startYear + 9 }}</a>
       </td>
-      <td></td>
-      <td></td>
+      <td class="available" :class="getCellStyle(startYear + 10)">
+        <a class="cell">{{ startYear + 10 }}</a>
+      </td>
+      <td class="available" :class="getCellStyle(startYear + 11)">
+        <a class="cell">{{ startYear + 11 }}</a>
+      </td>
     </tr>
     </tbody>
   </table>
@@ -69,7 +73,7 @@
 
     computed: {
       startYear() {
-        return Math.floor(this.date.getFullYear() / 10) * 10;
+        return Math.floor(this.date.getFullYear() / 12) * 12;
       }
     },
 
