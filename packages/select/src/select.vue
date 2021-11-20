@@ -52,8 +52,8 @@
         @blur="softFocus = false"
         @keyup="managePlaceholder"
         @keydown="resetInputState"
-        @keydown.down.prevent="handleNavigate('next')"
-        @keydown.up.prevent="handleNavigate('prev')"
+        @keydown.down.prevent="navigateOptions('next')"
+        @keydown.up.prevent="navigateOptions('prev')"
         @keydown.enter.prevent="selectOption"
         @keydown.esc.stop.prevent="visible = false"
         @keydown.delete="deletePrevTag"
@@ -84,14 +84,11 @@
       @focus="handleFocus"
       @blur="handleBlur"
       @input="debouncedOnInputChange"
-      @keydown.native.down.stop.prevent="handleNavigate('next')"
-      @keydown.native.up.stop.prevent="handleNavigate('prev')"
+      @keydown.native.down.stop.prevent="navigateOptions('next')"
+      @keydown.native.up.stop.prevent="navigateOptions('prev')"
       @keydown.native.enter.prevent="selectOption"
       @keydown.native.esc.stop.prevent="visible = false"
       @keydown.native.tab="visible = false"
-      @compositionstart="handleComposition"
-      @compositionupdate="handleComposition"
-      @compositionend="handleComposition"
       @mouseenter.native="inputHovering = true"
       @mouseleave.native="inputHovering = false">
       <template slot="prefix" v-if="$slots.prefix">
@@ -443,11 +440,6 @@
     },
 
     methods: {
-      handleNavigate(direction) {
-        if (this.isOnComposition) return;
-
-        this.navigateOptions(direction);
-      },
       handleComposition(event) {
         const text = event.target.value;
         if (event.type === 'compositionend') {
@@ -573,10 +565,10 @@
       handleFocus(event) {
         if (!this.softFocus) {
           if (this.automaticDropdown || this.filterable) {
-            if (this.filterable && !this.visible) {
+            this.visible = true;
+            if (this.filterable) {
               this.menuVisibleOnFocus = true;
             }
-            this.visible = true;
           }
           this.$emit('focus', event);
         } else {

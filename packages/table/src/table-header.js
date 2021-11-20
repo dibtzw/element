@@ -291,7 +291,8 @@ export default {
       return classes.join(' ');
     },
 
-    toggleAllSelection() {
+    toggleAllSelection(event) {
+      event.stopPropagation();
       this.store.commit('toggleAllSelection');
     },
 
